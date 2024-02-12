@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./styles.css" />
+
+    <title>Landing Page One Piece</title>
+</head>
+
+<body>
+    <main class="characters">
+        <div class="character">
+            <img class="image" src="./chopper.png" alt="Character Tony Chopper" />
+            <div class="content">
+                <i class="logo"></i>
+                <h2 class="character-name">Tony Chopper</h2>
+                <p class="description">This little reindeer gained the ability to change his form and think like humans
+                    after eating the Hito Hito no Mi fruit. Chopper is a valuable member of the Straw Hat Pirates crew,
+                    serving as the crew's doctor.</p>
+            </div>
+        </div>
+
+        <div class="character">
+            <img class="image" src="./zoro.png" alt="Character Roronoa Zoro" />
+            <div class="content">
+                <i class="logo"></i>
+                <h2 class="character-name">Roronoa Zoro</h2>
+                <p class="description">The first pirate (the second member if we count Luffy) to join the Straw Hat
+                    Pirates crew, Zoro accepted Luffy's invitation after the captain saved his life.</p>
+            </div>
+        </div>
+
+        <div class="character selected">
+            <img class="image" src="./luffy.png" alt="Character Monkey D. Luffy" />
+            <div class="content">
+                <i class="logo"></i>
+                <h2 class="character-name">Monkey D. Luffy</h2>
+                <p class="description">"Straw Hat Luffy", as he became known, is the protagonist of the anime and the
+                    founder and captain of the Straw Hat Pirates crew. Since a very young age, his greatest dream has
+                    been to one day find the legendary treasure of Gol D. Roger, to become the new Pirate King.</p>
+            </div>
+        </div>
+
+        <div class="character">
+
+            <img class="image" src="./nami.png" alt="Character Nami" />
+            <div class="content">
+                <i class="logo"></i>
+                <h2 class="character-name">Nami</h2>
+                <p class="description">An orphan of war, as a child Nami was adopted by Bell-mère, a woman from the
+                    Navy. Growing up alongside her adopted sister Nojiko, Nami already showed her passion for drawing
+                    maps, dreaming of one day making a map of the entire world.</p>
+            </div>
+        </div>
+
+        <div class="character">
+            <img class="image" src="./sanji.png" alt="Character Sanji" />
+            <div class="content">
+                <i class="logo"></i>
+                <h2 class="character-name">Sanji</h2>
+                <p class="description">Also known as "Black Leg" Sanji, this pirate was the fifth to join Luffy's
+                    crew. His actions as a pirate earned him the third highest bounty among the members of the Straw
+                    Hat crew, as well as serving as the group's official cook.</p>
+            </div>
+        </div>
+    </main>
+    <ul class="buttons">
+        <li>
+            <button class="button">
+                <img src="./chopper-flag.png" alt="Chopper's Crew" />
+            </button>
+        </li>
+        <li>
+            <button class="button">
+                <img src="./zoro-flag.png" alt="Roronoa Zoro's Crew" />
+            </button>
+        </li>
+        <li>
+            <button class="button selected">
+                <img src="./luffy-flag.png" alt="Monkey D. Luffy's Crew" />
+            </button>
+        </li>
+        <li>
+            <button class="button">
+                <img src="./nami-flag.png" alt="Nami's Crew" />
+            </button>
+        </li>
+        <li>
+            <button class="button">
+                <img src="./sanji-flag.png" alt="Sanji's Crew" />
+            </button>
+        </li>
+    </ul>
+
+    <script>
+        const buttons = document.querySelectorAll(".button");
+        const characters = document.querySelectorAll(".character");
+
+        buttons.forEach((button, index) => {
+            button.addEventListener("click", () => {
+                deselectButton();
+                deselectCharacter();
+
+                button.classList.add("selected");
+                characters[index].classList.add("selected");
+            });
+        });
+
+        function deselectCharacter() {
+            const selectedCharacter = document.querySelector(".character.selected");
+            selectedCharacter.classList.remove("selected");
+        }
+
+        function deselectButton() {
+            const selectedButton = document.querySelector(".button.selected");
+            selectedButton.classList.remove("selected");
+        }
+    </script>
+</body>
+
+</html>
